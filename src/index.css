@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 230 25% 7%;
+    --foreground: 210 40% 96%;
+    --card: 230 20% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 230 20% 11%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 20% 16%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 230 15% 18%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 262 83% 58%;
+    --chart-1: 262 83% 58%;
+    --chart-2: 199 89% 48%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    --radius: 0.75rem;
+    --sidebar-background: 230 20% 11%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 16%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 96%;
+    --card: 230 20% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 230 20% 11%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 20% 16%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 230 15% 18%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 262 83% 58%;
+    --chart-1: 262 83% 58%;
+    --chart-2: 199 89% 48%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    --sidebar-background: 230 20% 11%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 16%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Starfield background */
+.starfield {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.starfield::before,
+.starfield::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1.5px 1.5px at 160px 120px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 250px 20px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 300px 100px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(1.5px 1.5px at 350px 200px, rgba(255,255,255,0.35), transparent);
+  background-size: 400px 400px;
+  animation: drift 120s linear infinite;
+}
+
+.starfield::after {
+  background-size: 600px 600px;
+  opacity: 0.6;
+  animation: drift 200s linear infinite reverse;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-400px); }
+}

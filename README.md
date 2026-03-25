@@ -22,4 +22,4 @@ An AI-powered rocket simulator and learning platform for teens.
 5. Complete AI-generated lessons to learn rocket science concepts.
 
 ## Live Demo
-[View the app online](https://yourusername.github.io/rocket-learning-simulator)
+[View the app online](https://rocket-learning-simulator.vercel.app/)
